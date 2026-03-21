@@ -1,8 +1,9 @@
 #!name=ByteDance Ads Block (Pangolin Full)
-#!desc=Block pangolin / toutiao / byte ads endpoints (strict regex version)
-#!author=ChatGPT
-#!homepage=https://openai.com
-#!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png
+#!desc=更新时间2026.03.21
+#!author=Tao
+#!repo=https://github.com/chentaoinbox/surge/
+#!category=adgurd
+
 
 [URL Rewrite]
 
