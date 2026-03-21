@@ -3,21 +3,23 @@
 #!author=Tao
 #!repo=https://github.com/chentaoinbox/surge/
 #!category=AD
-#!reject=34
-#!mitm=13
+#!reject=38
+#!mitm=19
 #!force-http-engine-hosts=13
-#!total=47
+#!total=57
 
 [General]
 force-http-engine-hosts = %APPEND% pangolin-sdk-toutiao.com, pangolin-sdk-toutiao1.com, pangolin-sdk-toutiao-b.com, pglstatp-toutiao.com, ad.zijieapi.com, vcs.zijieapi.com, *.amemv.com, *.zijieapi.com, *.byteimg.com, *.byteorge.com, *.fqnovelvod.com, *.pstatp.com, *.chengzijianzhan.cn
 
 [URL Rewrite]
 
+# 穿山甲广告 SDK 主域名
 "^https?:\/\/.*pangolin-sdk\..*" - reject
 "^https?:\/\/.*pangolin-sdk-toutiao\..*" - reject
 "^https?:\/\/.*pangolin-sdk-toutiao1\..*" - reject
 "^https?:\/\/.*pglstatp-toutiao\..*" - reject
 
+# 通用广告相关域名拦截
 "^https?:\/\/([^\/]+\.)?bsccdn\.net\/.*" - reject
 "^https?:\/\/([^\/]+\.)?dig\.zjurl\.cn\/.*" - reject
 "^https?:\/\/([^\/]+\.)?dig\.bdurl\.net\/.*" - reject
@@ -29,34 +31,62 @@ force-http-engine-hosts = %APPEND% pangolin-sdk-toutiao.com, pangolin-sdk-toutia
 "^https?:\/\/([^\/]+\.)?pglstatp-toutiao\.com\/.*" - reject
 "^https?:\/\/([^\/]+\.)?vcs\.zijieapi\.com\/.*" - reject
 
+# 抖音/头条广告域名（amemv.com）
 "^https?:\/\/ads[^\/]*-normal\.amemv\.com\/.*" - reject
 "^https?:\/\/ads[^\/]*-normal-lq\.amemv\.com\/.*" - reject
 "^https?:\/\/ads[^\/]*-normal-lf\.amemv\.com\/.*" - reject
 "^https?:\/\/ads[^\/]*-normal-hl\.amemv\.com\/.*" - reject
 
+# 抖音/头条广告域名（zijieapi.com）
 "^https?:\/\/ads[^\/]*-normal\.zijieapi\.com\/.*" - reject
 "^https?:\/\/ads[^\/]*-normal-lq\.zijieapi\.com\/.*" - reject
 "^https?:\/\/ads[^\/]*-normal-lf\.zijieapi\.com\/.*" - reject
 "^https?:\/\/ads[^\/]*-normal-hl\.zijieapi\.com\/.*" - reject
 
+# 带 CDN 的广告域名变体
 "^https?:\/\/ads[^\/]*-normal-lq\.zijieapi\.com\.w\.cdngslb\.com\/.*" - reject
 "^https?:\/\/ads[^\/]*-normal-lq\.zijieapi\.com\.queniuiq\.com\/.*" - reject
 
+# 字节图片 CDN 广告
 "^https?:\/\/p[^\/]*-ad-sign\.byteimg\.com\/.*" - reject
 "^https?:\/\/p[^\/]*-ad\.byteimg\.com\/.*" - reject
+"^https?:\/\/p[^\/]*-local-ads\.byteimg\.com\.queniuso\.com\/.*" - reject
+"^https?:\/\/p[^\/]*-local-ads\.byteimg\.com\/.*" - reject
 
+# 字节其他服务广告
 "^https?:\/\/lf[^\/]*-orange\.byteorge\.com\/.*" - reject
 "^https?:\/\/v[^\/]*-novelapp\.fqnovelvod\.com\/.*" - reject
 "^https?:\/\/sf[^\/]*-ttcdn-tos\.pstatp\.com\/.*" - reject
 
-"^https?:\/\/p[^\/]*-local-ads\.byteimg\.com\.queniuso\.com\/.*" - reject
-"^https?:\/\/p[^\/]*-local-ads\.byteimg\.com\/.*" - reject
-
+# 自建站广告（字节系第三方）
 "^https?:\/\/([^\/]+\.)?localads\.chengzijianzhan\.cn\/.*" - reject
 "^https?:\/\/([^\/]+\.)?localads\.chengzijianzhan\.cn\.queniurc\.com\/.*" - reject
 
+# 补充：广告域名变体兜底
 "^https?:\/\/ads[^\/]*-normal-lf\.zijieapi\.com\.dhcp\/.*" - reject
 
+# =====================================================
+# 以下为补充规则（参考 1.txt 中与字节相关的关键规则）
+# =====================================================
+
+# 穿山甲 SDK 竞价/预拉取接口
+"^https?:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/get_ads" - reject
+"^https?:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/server_bidding\/pre_fetch\/" - reject
+
+# 字节广告素材 CDN
+"^https?:\/\/sf3-fe-tos\.pglstatp-toutiao\.com\/obj\/ad-pattern\/.*" - reject
+
+# 抖音本地广告
+"^https?:\/\/[a-z0-9]+\.pstatp\.com\/obj\/ad\//" - reject
+
+# 头条/抖音开屏广告接口
+"^https?:\/\/i\.snssdk\.com\/api\/ad\/union\/sdk\/get_ads" - reject
+"^https?:\/\/i\.snssdk\.com\/api\/ad\/union\/splash\/get_ads" - reject
+
+# 补充：字节相关广告请求特征
+"(?i)\b\/ad\/" - reject
+"(?i)\badvertisement" - reject
+"(?i)\badvertising" - reject
 
 [MITM]
-hostname = %APPEND% pangolin-sdk-toutiao.com, pangolin-sdk-toutiao1.com, pangolin-sdk-toutiao-b.com, pglstatp-toutiao.com, ad.zijieapi.com, vcs.zijieapi.com, *.amemv.com, *.zijieapi.com, *.byteimg.com, *.byteorge.com, *.fqnovelvod.com, *.pstatp.com, *.chengzijianzhan.cn
+hostname = %APPEND% pangolin-sdk-toutiao.com, pangolin-sdk-toutiao1.com, pangolin-sdk-toutiao-b.com, pglstatp-toutiao.com, ad.zijieapi.com, vcs.zijieapi.com, *.amemv.com, *.zijieapi.com, *.byteimg.com, *.byteorge.com, *.fqnovelvod.com, *.pstatp.com, *.chengzijianzhan.cn, *.snssdk.com, *.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao.com
