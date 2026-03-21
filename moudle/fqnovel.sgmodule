@@ -1,0 +1,55 @@
+#!name=ByteDance Ads Block (Pangolin Full)
+#!desc=Block pangolin / toutiao / byte ads endpoints (strict regex version)
+#!author=ChatGPT
+#!homepage=https://openai.com
+#!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png
+
+[URL Rewrite]
+
+^https?:\/\/.*pangolin-sdk\..* - reject
+^https?:\/\/.*pangolin-sdk-toutiao\..* - reject
+^https?:\/\/.*pangolin-sdk-toutiao1\..* - reject
+^https?:\/\/.*pglstatp-toutiao\..* - reject
+
+^https?:\/\/([^\/]+\.)?bsccdn\.net\/.* - reject
+^https?:\/\/([^\/]+\.)?dig\.zjurl\.cn\/.* - reject
+^https?:\/\/([^\/]+\.)?dig\.bdurl\.net\/.* - reject
+^https?:\/\/([^\/]+\.)?ad\.zijieapi\.com\/.* - reject
+^https?:\/\/([^\/]+\.)?apps\.bytesfield\.com\/.* - reject
+^https?:\/\/([^\/]+\.)?pangolin-sdk-toutiao\.com\/.* - reject
+^https?:\/\/([^\/]+\.)?pangolin-sdk-toutiao1\.com\/.* - reject
+^https?:\/\/([^\/]+\.)?pangolin-sdk-toutiao-b\.com\/.* - reject
+^https?:\/\/([^\/]+\.)?pglstatp-toutiao\.com\/.* - reject
+^https?:\/\/([^\/]+\.)?vcs\.zijieapi\.com\/.* - reject
+
+^https?:\/\/ads[^\/]*-normal\.amemv\.com\/.* - reject
+^https?:\/\/ads[^\/]*-normal-lq\.amemv\.com\/.* - reject
+^https?:\/\/ads[^\/]*-normal-lf\.amemv\.com\/.* - reject
+^https?:\/\/ads[^\/]*-normal-hl\.amemv\.com\/.* - reject
+
+^https?:\/\/ads[^\/]*-normal\.zijieapi\.com\/.* - reject
+^https?:\/\/ads[^\/]*-normal-lq\.zijieapi\.com\/.* - reject
+^https?:\/\/ads[^\/]*-normal-lf\.zijieapi\.com\/.* - reject
+^https?:\/\/ads[^\/]*-normal-hl\.zijieapi\.com\/.* - reject
+
+^https?:\/\/ads[^\/]*-normal-lq\.zijieapi\.com\.w\.cdngslb\.com\/.* - reject
+^https?:\/\/ads[^\/]*-normal-lq\.zijieapi\.com\.queniuiq\.com\/.* - reject
+
+^https?:\/\/p[^\/]*-ad-sign\.byteimg\.com\/.* - reject
+^https?:\/\/p[^\/]*-ad\.byteimg\.com\/.* - reject
+
+^https?:\/\/lf[^\/]*-orange\.byteorge\.com\/.* - reject
+^https?:\/\/v[^\/]*-novelapp\.fqnovelvod\.com\/.* - reject
+^https?:\/\/sf[^\/]*-ttcdn-tos\.pstatp\.com\/.* - reject
+
+^https?:\/\/p[^\/]*-local-ads\.byteimg\.com\.queniuso\.com\/.* - reject
+^https?:\/\/p[^\/]*-local-ads\.byteimg\.com\/.* - reject
+
+^https?:\/\/([^\/]+\.)?localads\.chengzijianzhan\.cn\/.* - reject
+^https?:\/\/([^\/]+\.)?localads\.chengzijianzhan\.cn\.queniurc\.com\/.* - reject
+
+^https?:\/\/ads[^\/]*-normal-lf\.zijieapi\.com\.dhcp\/.* - reject
+
+
+[MITM]
+hostname = %APPEND% pangolin-sdk-toutiao.com, pangolin-sdk-toutiao1.com, pangolin-sdk-toutiao-b.com, pglstatp-toutiao.com, ad.zijieapi.com, vcs.zijieapi.com, *.amemv.com, *.zijieapi.com, *.byteimg.com, *.byteorge.com, *.fqnovelvod.com, *.pstatp.com, *.chengzijianzhan.cn
