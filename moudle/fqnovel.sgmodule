@@ -1,5 +1,5 @@
 #!name=番茄小说
-#!desc=番茄小说/字节跳动广告屏蔽规则 | 最后更新时间 2026-03-21
+#!desc=番茄小说/字节跳动广告屏蔽规则 | 最后更新时间 2026-09-14
 #!author=Tao
 #!repo=https://raw.githubusercontent.com/chentaoinbox/surge/main/moudle/fqnovel.sgmodule
 #!category=AD
@@ -133,6 +133,10 @@ force-http-engine-hosts = %APPEND% pangolin-sdk-toutiao.com, pangolin-sdk-toutia
 "^https?:\/\/[^\/]*reading-video\.fqnovelvod\.com\/.*" - reject
 "^https?:\/\/[^\/]*\.douyimpic\.com\/.*" - reject
 "^https?:\/\/[^\/]*\.ecombdapi\.com\/.*" - reject
+"^https?:\/\/[^\/]*reading-video[^\/]*\/.*" - reject
+"^https?:\/\/.*item\.ecombdimg\.com.*" - reject
+"^https?:\/\/.*douyinpic\.com.*" - reject
+"^https?:\/\/[^\/]*ecombdapi[^\/]*\/.*" - reject
 
 
 # ==================== 通用广告特征兜底 ====================
