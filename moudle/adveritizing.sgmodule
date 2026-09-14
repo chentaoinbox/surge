@@ -1,7 +1,7 @@
 #!name=Advertising
 #!desc=最后更新时间 2025-08-26 02:12:25
 #!author=blackmatrix7
-#!repo=https://github.com/blackmatrix7/ios_rule_script
+#!repo=https://raw.githubusercontent.com/chentaoinbox/surge/main/moudle/adveritizing.sgmodule
 #!category=blackmatrix7
 #!reject=740
 #!mitm=698
@@ -754,7 +754,7 @@ force-http-engine-hosts = %APPEND% *.ott.cibntv.net,intl.iqiyi.com,maicai.api.dd
 "^https?:\/\/zlsdk\.1rtb\.net\/sdk\/req_ad\?" - reject
 "^https?:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/ad\/listLaunchADByCity\.do" - reject
 "^https?:\/\/ztoread\.ziroom\.com\/ymerApi\/v\d\/index\/open" - reject
-"https://dynamicad.kfc.com.cn/api/app5/homepage/ai/popup" - reject
+"^https?:\/\/dynamicad\.kfc\.com\.cn\/api\/app5\/homepage\/ai\/popup" - reject
 
 
 

@@ -1,7 +1,7 @@
 #!name=Advertising
 #!desc=番茄小说/字节跳动广告屏蔽规则 | 最后更新时间 2026-03-21
 #!author=Tao
-#!repo=https://github.com/chentaoinbox/surge/
+#!repo=https://raw.githubusercontent.com/chentaoinbox/surge/main/moudle/fqnovel.sgmodule
 #!category=AD
 #!reject=52
 #!mitm=24
@@ -57,6 +57,9 @@ force-http-engine-hosts = %APPEND% pangolin-sdk-toutiao.com, pangolin-sdk-toutia
 "^https?:\/\/.*\.default\.ixigua\.com\/" - reject
 "^https?:\/\/v6-novelapp\.ixigua\.com\/" - reject
 "^https?:\/\/.*\.novelapp\.ixigua\.com\/" - reject
+"^https?:\/\/.*\.fqnovelvod\.com\/.*\?(.*&)?mime_type=video_mp4" - reject
+"^https?:\/\/.*\.fqnovelvod\.com\/.*video\/tos\/.*" - reject
+"^https?:\/\/.*\.douyinpic\.com\/.*" - reject
 
 # ==================== 穿山甲广告 SDK ====================
 
@@ -107,6 +110,7 @@ force-http-engine-hosts = %APPEND% pangolin-sdk-toutiao.com, pangolin-sdk-toutia
 
 # ==================== 字节图片广告变体 ====================
 
+"^https?:\/\/p1-mix\.byteimg\.com\/" - reject
 "^https?:\/\/p[^\/]*-ad-sign\.byteimg\.com\/.*" - reject
 "^https?:\/\/p[^\/]*-ad\.byteimg\.com\/.*" - reject
 "^https?:\/\/p[^\/]*-local-ads\.byteimg\.com\.queniuso\.com\/.*" - reject
@@ -123,6 +127,14 @@ force-http-engine-hosts = %APPEND% pangolin-sdk-toutiao.com, pangolin-sdk-toutia
 "^https?:\/\/([^\/]+\.)?localads\.chengzijianzhan\.cn\/.*" - reject
 "^https?:\/\/([^\/]+\.)?localads\.chengzijianzhan\.cn\.queniurc\.com\/.*" - reject
 
+# ==================== 自设不分类 ====================
+"^https?:\/\/[^\/]+\.sjxydc\.com\/.*" - reject
+"^https?:\/\/ncdnfqqios\.fqnovelvod\.com\/.*" - reject
+"^https?:\/\/[^\/]*reading-video\.fqnovelvod\.com\/.*" - reject
+"^https?:\/\/[^\/]*\.douyimpic\.com\/.*" - reject
+"^https?:\/\/[^\/]*\.ecombdapi\.com\/.*" - reject
+
+
 # ==================== 通用广告特征兜底 ====================
 
 "(?i)\b\/ad\/" - reject
@@ -131,4 +143,4 @@ force-http-engine-hosts = %APPEND% pangolin-sdk-toutiao.com, pangolin-sdk-toutia
 "(?i)\bsplash_screen" - reject
 
 [MITM]
-hostname = %APPEND% pangolin-sdk-toutiao.com, pangolin-sdk-toutiao1.com, pangolin-sdk-toutiao-b.com, pglstatp-toutiao.com, ad.zijieapi.com, vcs.zijieapi.com, *.amemv.com, *.zijieapi.com, *.byteimg.com, *.byteorge.com, *.bytegoofy.com, *.bytedance.com, *.fqnovelvod.com, *.pstatp.com, *.snssdk.com, *.ixigua.com, *.chengzijianzhan.cn, *.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao.com, activity-ag.awemeughun.com, mcs.snssdk.com, gurd.snssdk.com
+hostname = %APPEND% pangolin-sdk-toutiao.com, pangolin-sdk-toutiao1.com, pangolin-sdk-toutiao-b.com, pglstatp-toutiao.com, ad.zijieapi.com, vcs.zijieapi.com, *.amemv.com, *.zijieapi.com, *.byteimg.com, *.byteorge.com, *.bytegoofy.com, *.bytedance.com, *.fqnovelvod.com, *.pstatp.com, *.snssdk.com, *.ixigua.com, *.chengzijianzhan.cn, *.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao.com, activity-ag.awemeughun.com, mcs.snssdk.com, gurd.snssdk.com, *.douyinpic. com
