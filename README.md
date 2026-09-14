@@ -40,4 +40,8 @@ IP-CIDR,180.96.2.114/32,REJECT,no-resolve
 "^https?:\/\/ncdnfqqios\.fqnovelvod\.com\/.*" - reject
 "^https?:\/\/[^\/]*\.douyimpic\.com\/.*" - reject
 "^https?:\/\/.*reading-video.*" - reject
+
+"^https?:\/\/.*\.fqnovelvod\.com\/.*\?(.*&)?mime_type=video_mp4" - reject
+"^https?:\/\/.*\.fqnovelvod\.com\/.*video\/tos\/.*" - reject
+"^https?:\/\/.*\.douyinpic\.com\/.*" - reject
  -->
