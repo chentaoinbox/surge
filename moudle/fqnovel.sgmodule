@@ -1,5 +1,5 @@
 #!name=番茄小说
-#!desc=番茄小说/字节跳动广告屏蔽规则 | 2026-09-14 | V1.0.4
+#!desc=番茄小说/字节跳动广告屏蔽规则 | 2026-09-14 | V1.0.5
 #!author=Tao
 #!repo=https://raw.githubusercontent.com/chentaoinbox/surge/main/moudle/fqnovel.sgmodule
 #!category=AD
@@ -9,8 +9,7 @@
 #!total=76
 
 [General]
-force-http-engine-hosts = %APPEND% pangolin-sdk-toutiao.com, pangolin-sdk-toutiao1.com, pangolin-sdk-toutiao-b.com, pglstatp-toutiao.com, ad.zijieapi.com, vcs.zijieapi.com, *.amemv.com, *.zijieapi.com, *.byteimg.com, *.byteorge.com, *.fqnovelvod.com, *.pstatp.com, *.chengzijianzhan.cn
-
+force-http-engine-hosts = %APPEND% pangolin-sdk-toutiao.com, pangolin-sdk-toutiao1.com, pangolin-sdk-toutiao-b.com, pglstatp-toutiao.com, ad.zijieapi.com, vcs.zijieapi.com, *.amemv.com, *.zijieapi.com, *.byteimg.com, *.byteorge.com, *.bytegoofy.com, *.bytedance.com, *.fqnovelvod.com, *.pstatp.com, *.snssdk.com, *.ixigua.com, *.chengzijianzhan.cn, *.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao.com, activity-ag.awemeughun.com, mcs.snssdk.com, gurd.snssdk.com, *.douyinpic. com, *.pangolin-sdk-toutiao,*.pangolin-sdk-toutiao.*,*.pstatp.com,*.pstatp.com.*,*.pglstatp-toutiao.com.*,*.pglstatp-toutiao.com,gurd.snssdk.com,gurd.snssdk.com.*,*default.ixigua.com
 
 [URL Rewrite]
 
@@ -127,7 +126,7 @@ force-http-engine-hosts = %APPEND% pangolin-sdk-toutiao.com, pangolin-sdk-toutia
 
 # ==================== 自设不分类 ====================
 "^https?:\/\/.*reading-video.*" - reject
-
+"^https?:\/\/[^\/]*reading-video\.fqnovelvod\.com[^\/]*\/.*" - reject
 
 # ==================== 通用广告特征兜底 ====================
 
