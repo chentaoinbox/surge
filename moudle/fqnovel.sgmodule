@@ -13,6 +13,8 @@ force-http-engine-hosts = %APPEND% pangolin-sdk-toutiao.com, pangolin-sdk-toutia
 
 [Rule]
 
+DOMAIN,*reading-sign.fqnovelpic.com,DIRECT
+
 DOMAIN,p6-ad-sign.byteimg.com,REJECT
 
 DOMAIN,p9-ad-sign.byteimg.com,REJECT
@@ -195,9 +197,7 @@ IP-CIDR,180.96.2.114/32,REJECT,no-resolve
 # ==================== 自设不分类 ====================
 "^https?:\/\/[^\/]+\.sjxydc\.com\/.*" - reject
 "^https?:\/\/ncdnfqqios\.fqnovelvod\.com\/.*" - reject
-"^https?:\/\/[^\/]*reading-video\.fqnovelvod\.com\/.*" - reject
 "^https?:\/\/[^\/]*\.douyimpic\.com\/.*" - reject
-"^https?:\/\/[^\/]*\.ecombdapi\.com\/.*" - reject
 "^https?:\/\/[^\/]*reading-video[^\/]*\/.*" - reject
 "^https?:\/\/.*item\.ecombdimg\.com.*" - reject
 "^https?:\/\/.*douyinpic\.com.*" - reject
