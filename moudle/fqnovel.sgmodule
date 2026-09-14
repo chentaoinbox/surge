@@ -1,5 +1,5 @@
 #!name=番茄小说
-#!desc=番茄小说/字节跳动广告屏蔽规则 | 2026-09-14 | V1.0.0
+#!desc=番茄小说/字节跳动广告屏蔽规则 | 2026-09-14 | V1.0.1
 #!author=Tao
 #!repo=https://raw.githubusercontent.com/chentaoinbox/surge/main/moudle/fqnovel.sgmodule
 #!category=AD
@@ -167,7 +167,7 @@ IP-CIDR,180.96.2.114/32,REJECT,no-resolve
 "^https?:\/\/[^\/]+\.sjxydc\.com\/.*" - reject
 "^https?:\/\/ncdnfqqios\.fqnovelvod\.com\/.*" - reject
 "^https?:\/\/[^\/]*\.douyimpic\.com\/.*" - reject
-"^https?:\/\/[^\/]*reading-video[^\/]*\/.*" - reject
+"^https?:\/\/.*reading-video.*" - reject
 
 
 # ==================== 通用广告特征兜底 ====================
