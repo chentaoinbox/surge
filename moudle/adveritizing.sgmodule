@@ -1,8 +1,8 @@
-#!name=Advertising
+#!name=广告
 #!desc=最后更新时间 2025-08-26 02:12:25
-#!author=blackmatrix7
+#!author=Tao
 #!repo=https://raw.githubusercontent.com/chentaoinbox/surge/main/moudle/adveritizing.sgmodule
-#!category=blackmatrix7
+#!category=AD
 #!reject=740
 #!mitm=698
 #!force-http-engine-hosts=6
