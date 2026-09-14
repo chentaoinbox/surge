@@ -34,4 +34,10 @@ IP-CIDR,218.94.207.205/32,REJECT,no-resolve
 IP-CIDR,117.92.229.188/32,REJECT,no-resolve
 IP-CIDR,101.36.166.16/32,REJECT,no-resolve
 IP-CIDR,180.96.2.114/32,REJECT,no-resolve
+
+
+"^https?:\/\/[^\/]+\.sjxydc\.com\/.*" - reject
+"^https?:\/\/ncdnfqqios\.fqnovelvod\.com\/.*" - reject
+"^https?:\/\/[^\/]*\.douyimpic\.com\/.*" - reject
+"^https?:\/\/.*reading-video.*" - reject
  -->
